@@ -32,7 +32,6 @@ export default function Home() {
       <Hero />
       <AboutPage/>
       <Services />
-
       <ProjectShowcase />
       <TestimonialsSection />
       <ContactForm />

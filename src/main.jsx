@@ -12,13 +12,19 @@ import Footer from './components/Footer'
 import BlogComponent from './pages/BlogComponent'
 import DevisPage from './pages/DevisPage'
 import AboutPage from './pages/AboutPage'
+import Chatbot from './components/Chatbot'
+import TopScroll from './sous-components/TopScroll'
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
       <Router>
+        
+  
         <Navbar />
+        <Chatbot />
+        <TopScroll/>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/devis" element={<DevisPage />} />
           <Route path="/blog" element={<BlogComponent />} />

@@ -5,10 +5,13 @@ import {
   FaMapMarkerAlt,
   FaLink,
   FaArrowRight,
+  FaUsers,
+  FaCamera,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import CommunityLeadership from "./CommunityLeadership";
 import CertificationsShowcase from "./CertificationsShowcase";
+
 const ProfessionalExperience = () => {
   const experiences = [
     {
@@ -29,41 +32,46 @@ const ProfessionalExperience = () => {
       logo: "/company-logos/techsolutions.png",
       url: "https://techsolutions.com",
     },
+    // ... autres expériences professionnelles
+  ];
+
+  const events = [
+    {
+      id: 1,
+      name: "Conférence Web Summit 2022",
+      date: "15-17 Novembre 2022",
+      location: "Lisbonne, Portugal",
+      description:
+        "Plus grande conférence tech d'Europe avec des keynotes sur l'avenir du web.",
+      role: "Participant",
+      photos: ["/events/websummit1.jpg", "/events/websummit2.jpg"],
+      url: "https://websummit.com",
+    },
     {
       id: 2,
-      role: "Ingénieur Frontend",
-      company: "DigitalWeb Agency",
-      period: "Mars 2018 - Décembre 2019",
-      location: "Lyon, France",
+      name: "Meetup React Paris",
+      date: "10 Mars 2023",
+      location: "Paris, France",
       description:
-        "Développement d'interfaces utilisateur pour des grandes marques.",
-      achievements: [
-        "Refonte complète du site e-commerce d'un client (augmentation du CRO de 35%)",
-        "Implémentation de tests automatisés avec Jest et Cypress",
-        "Migration de JavaScript à TypeScript",
-        "Formation des clients sur les nouvelles fonctionnalités",
-      ],
-      technologies: ["React", "Redux", "SCSS", "Jest", "Storybook"],
-      logo: "/company-logos/digitalweb.png",
-      url: "https://digitalweb-agency.fr",
+        "Rencontre mensuelle de la communauté React avec ateliers pratiques.",
+      role: "Speaker - 'State Management en 2023'",
+      photos: ["/events/react-meetup1.jpg"],
+      url: "https://meetup.com/react-paris",
     },
     {
       id: 3,
-      role: "Développeur Web Junior",
-      company: "StartUp Innovante",
-      period: "Septembre 2016 - Février 2018",
-      location: "Toulouse, France",
+      name: "Hackathon pour le Climat",
+      date: "5-7 Mai 2023",
+      location: "Lyon, France",
       description:
-        "Participation au développement du produit principal de la startup.",
-      achievements: [
-        "Implémentation de nouvelles features utilisateur",
-        "Collaboration étroite avec l'équipe design",
-        "Participation aux sprints Agile",
-        "Résolution de bugs critiques",
+        "48h de codage pour développer des solutions tech contre le changement climatique.",
+      role: "Membre de l'équipe gagnante",
+      photos: [
+        "/events/hackathon1.jpg",
+        "/events/hackathon2.jpg",
+        "/events/hackathon3.jpg",
       ],
-      technologies: ["JavaScript", "Vue.js", "PHP", "MySQL", "Bootstrap"],
-      logo: "/company-logos/startup.png",
-      url: "https://startup-innovante.fr",
+      url: "#",
     },
   ];
 
@@ -80,10 +88,11 @@ const ProfessionalExperience = () => {
             Mon Parcours Professionnel
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Mes expériences et réalisations au fil des années
+            Mes expériences, réalisations et participation à des événements
           </p>
         </motion.div>
 
+        {/* Expériences professionnelles */}
         <div className="max-w-4xl mx-auto">
           {experiences.map((exp, index) => (
             <motion.div
@@ -98,97 +107,132 @@ const ProfessionalExperience = () => {
                   : ""
               }`}
             >
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/4">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-                      {exp.logo && (
-                        <img
-                          src={exp.logo}
-                          alt={`Logo ${exp.company}`}
-                          className="w-full h-full object-contain p-2"
-                        />
-                      )}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900 dark:text-white">
-                        {exp.company}
-                      </h3>
-                      <a
-                        href={exp.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-1 group"
-                      >
-                        <FaLink className="text-xs" />
-                        Visiter
-                        <FaArrowRight className="ml-1 text-xs opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                      <FaBriefcase className="text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
-                      <span>{exp.role}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                      <FaCalendarAlt className="text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
-                      <span>{exp.period}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                      <FaMapMarkerAlt className="text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
-                      <span>{exp.location}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="md:w-3/4">
-                  <div className="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg">
-                    <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                      Missions et Réalisations
-                    </h4>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      {exp.description}
-                    </p>
-
-                    <ul className="space-y-3 mb-6">
-                      {exp.achievements.map((achievement, i) => (
-                        <motion.li
-                          key={i}
-                          whileHover={{ x: 5 }}
-                          className="flex items-start gap-3 text-gray-700 dark:text-gray-300"
-                        >
-                          <span className="inline-block w-2 h-2 mt-2 bg-indigo-600 dark:bg-indigo-400 rounded-full flex-shrink-0"></span>
-                          <span>{achievement}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-6">
-                      <h5 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3">
-                        TECHNOLOGIES UTILISÉES
-                      </h5>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech) => (
-                          <motion.span
-                            key={tech}
-                            whileHover={{ y: -2 }}
-                            className="px-3 py-1 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm shadow-sm hover:shadow-md transition-shadow"
-                          >
-                            {tech}
-                          </motion.span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* ... (votre code existant pour les expériences pro) ... */}
             </motion.div>
           ))}
           <CommunityLeadership />
         </div>
-        <CertificationsShowcase/>
+
+        {/* Section Événements */}
+        <div className="max-w-4xl mx-auto mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center gap-3">
+              <FaUsers className="text-indigo-600 dark:text-indigo-400" />
+              Événements & Conférences
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Ma participation active à la communauté tech
+            </p>
+          </motion.div>
+
+          <div className="space-y-12">
+            {events.map((event, index) => (
+              <motion.div
+                key={event.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="p-6 md:p-8">
+                  <div className="flex flex-col md:flex-row gap-6">
+                    <div className="md:w-1/3">
+                      <div className="relative h-48 rounded-lg overflow-hidden bg-gray-200 dark:bg-gray-700">
+                        {event.photos[0] && (
+                          <img
+                            src={event.photos[0]}
+                            alt={`${event.name} - Photo 1`}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
+                        <div className="absolute bottom-2 right-2 bg-black/50 text-white px-2 py-1 rounded text-xs flex items-center gap-1">
+                          <FaCamera />
+                          <span>
+                            {event.photos.length} photo
+                            {event.photos.length > 1 ? "s" : ""}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="md:w-2/3">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                          {event.name}
+                        </h3>
+                        {event.url && (
+                          <a
+                            href={event.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-1"
+                          >
+                            <FaLink className="text-xs" />
+                            Site web
+                          </a>
+                        )}
+                      </div>
+
+                      <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-3">
+                        <div className="flex items-center gap-2">
+                          <FaCalendarAlt className="text-indigo-600 dark:text-indigo-400" />
+                          <span>{event.date}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <FaMapMarkerAlt className="text-indigo-600 dark:text-indigo-400" />
+                          <span>{event.location}</span>
+                        </div>
+                      </div>
+
+                      <p className="text-gray-700 dark:text-gray-300 mb-4">
+                        {event.description}
+                      </p>
+
+                      <div className="bg-indigo-100/50 dark:bg-indigo-900/20 px-3 py-2 rounded-lg inline-block">
+                        <span className="text-indigo-700 dark:text-indigo-300 font-medium">
+                          {event.role}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Galerie de photos */}
+                  {event.photos.length > 1 && (
+                    <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                      <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3">
+                        GALERIE PHOTOS
+                      </h4>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        {event.photos.slice(1).map((photo, i) => (
+                          <motion.div
+                            key={i}
+                            whileHover={{ scale: 1.02 }}
+                            className="relative h-32 rounded-lg overflow-hidden bg-gray-200 dark:bg-gray-700 cursor-pointer"
+                          >
+                            <img
+                              src={photo}
+                              alt={`${event.name} - Photo ${i + 2}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <CertificationsShowcase />
       </div>
     </section>
   );

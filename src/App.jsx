@@ -18,8 +18,8 @@ import { Import } from "lucide-react";
 export default function App() {
   return (
     <>
-      <TopScroll />{" "}
-      <section id="hero" className="relative   top-0  text-white pb-24">
+   
+      <section id="hero" className="relative   h-screen top-0  text-white pb-24 z-40">
         {/* Éléments décoratifs animés */}
         <Home />
         <div className="relative top-12 left-0 w-full h-full pointer-events-none z-40">
@@ -28,7 +28,7 @@ export default function App() {
           <div className="shape circle-3"></div>
           <div className="shape square-1"></div>
         </div>
-        <Chatbot />
+
       </section>
     </>
   );

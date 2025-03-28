@@ -102,7 +102,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-12 px-4 sm:px-6 lg:px-8 
+      className="py-12 px-4 sm:px-6 lg:px-8 bg-transparent z-50
         "
     >
       <div className="max-w-7xl mx-auto">

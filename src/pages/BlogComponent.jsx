@@ -108,7 +108,18 @@ const BlogComponent = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+     <section id="hero" className=" py-36 relative   top-0   text-white pb-24">
+ 
+
+      
+        <div className="relative top-12 left-0 w-full h-full pointer-events-none z-40">
+          <div className="shape circle-1"></div>
+          <div className="shape circle-2"></div>
+          <div className="shape circle-3"></div>
+          <div className="shape square-1"></div>
+        </div>
+
+
       <div className="container mx-auto px-4">
         {/* En-tête */}
         <div className="text-center mb-16">

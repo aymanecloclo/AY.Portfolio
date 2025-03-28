@@ -80,7 +80,7 @@ const ProjectShowcase = () => {
   };
 
   return (
-    <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8 ">
+    <section id="projects" className="pb-16 px-4 sm:px-6 lg:px-8b ">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
